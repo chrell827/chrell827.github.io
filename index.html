@@ -6,6 +6,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Christian's Page</title>
+        <script src="https://code.jquery.com/jquery.js"></script>
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
@@ -24,7 +25,7 @@
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Skills</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#myPortfolio">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -52,6 +53,7 @@
                     <div class="col-lg-8 text-center">
                         <h2 class="text-white mt-0">I like developing!</h2>
                         <hr class="divider light my-4" />
+                        <img src="assets/img/self.jpg" class="m-2 rounded-circle fluid" style="height: 300px;"> </img>
                         <p class="text-white-50 mb-4">Completed a Full Stack Web Development program to create meaningful websites and web applications</p>
                         <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Here's what I can do!</a>
                     </div>
@@ -67,7 +69,7 @@
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <i class="fa fa-4x fa-chrome text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">HTML & CSS</h3>
+                            <h3 class="h4 mb-2">HTML / jQuery</h3>
                             <p class="text-muted mb-0">Able to structure and design webpages from scratch</p>
                         </div>
                     </div>
@@ -75,7 +77,7 @@
                         <div class="mt-5">
                             <i class=""></i>
                             <i class="fa-4x fa fa-picture-o text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">BootStrap</h3>
+                            <h3 class="h4 mb-2">BootStrap / CSS</h3>
                             <p class="text-muted mb-0">Strong familiarity with Bootstrap for further creativity!</p>
                         </div>
                     </div>
@@ -145,4 +147,16 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
+    <script>
+        var tl = gsap.timeline();
+        tl.from(".fa", { duration: 1, opacity: 0, y: -150, stagger: 0.25 });
+        tl.pause();
+        $(window).scroll(function () {
+            console.log($(window).scrollTop());
+            if ($(window).scrollTop() > 1000)
+                tl.resume();
+        });
+    </script>
 </html>
